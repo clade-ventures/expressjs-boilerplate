@@ -23,6 +23,12 @@ export default {
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
   moduleNameMapper: {
     '@server(.*)$': `${rootDirectory}/src$1`,
+    '@controllers(.*)$': `${rootDirectory}/src/controllers$1`,
+    '@models(.*)$': `${rootDirectory}/src/models$1`,
+    '@services(.*)$': `${rootDirectory}/src/services$1`,
+    '@middlewares(.*)$': `${rootDirectory}/src/middlewares$1`,
+    '@validations(.*)$': `${rootDirectory}/src/validations$1`,
+    '@types(.*)$': `${rootDirectory}/src/types$1`,
     '@config(.*)$': `${rootDirectory}/src/config$1`,
     '@tests(.*)$': `${rootDirectory}/__tests__$1`,
   },
@@ -31,7 +37,7 @@ export default {
     [
       path.resolve(__dirname, 'node_modules', 'jest-html-reporter'),
       {
-        pageTitle: 'Demo test Report',
+        pageTitle: 'Test Report',
         outputPath: 'test-report.html',
       },
     ],
