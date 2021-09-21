@@ -1,4 +1,6 @@
-const hello = (_, res) => {
+import express from 'express';
+
+const hello = (_: express.Request, res: express.Response): void => {
   res.send({
     meta: {
       status: 'success',

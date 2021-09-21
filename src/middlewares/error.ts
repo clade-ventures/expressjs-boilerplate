@@ -1,8 +1,15 @@
-import config from '@server/config/config';
-import ApiError from '@server/utils/ApiError';
+import { Request, Response, NextFunction } from 'express';
 import httpStatus from 'http-status';
 
-const errorConverter = (err, _req, _res, next) => {
+import config from '@server/config/config';
+import ApiError from '@server/utils/ApiError';
+
+const errorConverter = (
+  err: any,
+  _req: Request,
+  _res: Response,
+  next: NextFunction,
+): void => {
   let error = err;
   if (!(error instanceof ApiError)) {
     const statusCode = error.statusCode
@@ -15,7 +22,7 @@ const errorConverter = (err, _req, _res, next) => {
 };
 
 // eslint-disable-next-line no-unused-vars
-const errorHandler = (err, _req, res, _next) => {
+const errorHandler = (err: any, _req: Request, res: Response): void => {
   let { statusCode, message } = err;
   if (config.env === 'production' && !err.isOperational) {
     statusCode = httpStatus.INTERNAL_SERVER_ERROR;

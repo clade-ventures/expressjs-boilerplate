@@ -1,20 +1,11 @@
-import * as moduleAlias from 'module-alias';
+import 'module-alias/register';
+import dotenv from 'dotenv';
 import app from './app';
-import config from './config/config';
 
-const sourcePath = process.env.NODE_ENV === 'development' ? 'src' : 'build';
-moduleAlias.addAliases({
-  '@server': sourcePath,
-  '@config': `${sourcePath}/config`,
-  '@models': `${sourcePath}/modelss`,
-  '@services': `${sourcePath}/services`,
-  '@controllers': `${sourcePath}/controllers`,
-  '@validations': `${sourcePath}/validations`,
-  '@middlewares': `${sourcePath}/middlewares`,
-});
+dotenv.config();
 
-const port = config.port || 5000;
+const port = process.env.PORT || 8080;
 
 app.listen(port, () => {
-  console.info(`Listening to port ${port}`);
+  console.info(`Listening to port http://localhost:${port}/`);
 });

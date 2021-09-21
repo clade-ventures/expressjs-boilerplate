@@ -1,15 +1,16 @@
-# Expess JS Boilerplate
+# GoSend Delivery Service
 
-[![TypeScript version][ts-badge]][typescript-4-3]
-[![Node.js version][nodejs-badge]][nodejs]
+## About
 
-👩🏻‍💻 Developer Ready: A comprehensive template for Typescript Express.Js projects.
+## Environment
 
-Cloud Run Typescript:
-https://github.com/getsentry/cloud-run-typescript-template/blob/main/bin/deploy.sh
+## Scripts
 
-Cloud Run with Google Secret Manager:
-https://youtu.be/JIE89dneaGo?t=310
+## Folder Structure
 
-Cloud Run Firestore:
-https://retool.com/blog/crud-with-cloud-firestore-using-the-nodejs-sdk/
+## Testing
+
+## Documentation
+
+- [Google Cloud Setup Doc](https://docs.google.com/document/d/1hzJCcbStIRqwCWWRH9BUMW8_cfnTf4gkAypI1-t2aI0/edit?usp=sharing)
+- [Open API 3.0](#)

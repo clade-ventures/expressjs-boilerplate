@@ -2,12 +2,11 @@ import express, { Application } from 'express';
 import cors from 'cors';
 import helmet from 'helmet';
 import xss from 'xss-clean';
+import httpStatus from 'http-status';
 import compression from 'compression';
-import rateLimit from 'express-rate-limit';
 
 import v1Routes from './routes/v1';
 import ApiError from './utils/ApiError';
-import httpStatus from 'http-status';
 
 import { errorHandler } from './middlewares/error';
 
@@ -32,15 +31,9 @@ app.use(compression());
 app.use(cors());
 app.options('*', cors());
 
-// rate limiter
-app.use(
-  '/v1',
-  rateLimit({
-    windowMs: 15 * 60 * 1000,
-    max: 20,
-    skipSuccessfulRequests: true,
-  }),
-);
+app.get('/', (_, res) => {
+  res.send('PT HZN Teknologi Indonesia - Gojek Delivery Service');
+});
 
 // v1 api routes
 app.use('/v1', v1Routes);
